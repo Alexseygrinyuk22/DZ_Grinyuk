@@ -7,7 +7,7 @@ def mask_account_card(get_mask_card_number: Union[str, int], get_mask_account: U
     """Функция которая принимает номер карты и номер счета и шифрует их"""
     new_masks_card = get_mask_card_number(card_)
     new_mask_account = get_mask_account(bank_account)
-    return f"'Visa'{new_masks_card} \n'Счет'{new_mask_account}"
+    return f"{new_masks_card} \n{new_mask_account}"
 
 
 def get_date() -> Union[str, int]:
