@@ -16,3 +16,6 @@ def get_mask_account(bank_account: Any) -> Any:
     chunks, chunk_size = len(private_last_account), len(private_last_account)
     return "".join([private_last_account[i : i + chunk_size] for i in range(0, chunks, chunk_size)])
 
+
+card_ = "Maestro 1596837868705199"
+bank_account = "Счет 73654108430135874305"
