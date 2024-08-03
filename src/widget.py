@@ -3,12 +3,12 @@ from typing import Union
 import datetime
 
 
-def mask_account_card(get_mask_card_number: Union[str, int], get_mask_account: Union[str, int]) -> Union[str, int]:
+def mask_account_card(call_number: Union[str, int]) -> Union[str, int]:
     """Функция которая принимает номер карты и номер счета и шифрует их"""
-    new_masks_card = get_mask_card_number(card_)
-    new_mask_account = get_mask_account(bank_account)
-    return f"{new_masks_card} \n{new_mask_account}"
-
+    if call_number == card_:
+        return get_mask_card_number(card_)
+    else:
+        return get_mask_account(bank_account)
 
 def get_date() -> Union[str, int]:
     """Функция выводит время"""
@@ -17,4 +17,4 @@ def get_date() -> Union[str, int]:
     return get_current_time
 
 
-print(mask_account_card(get_mask_card_number, get_mask_account))
+print(mask_account_card(call_number))
