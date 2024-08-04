@@ -4,8 +4,8 @@ import datetime
 
 
 def mask_account_card(call_number: Union[str, int]) -> Union[str, int]:
-    """Функция которая принимает номер карты и номер счета и шифрует их"""
-    if call_number == card_:
+    """Функция которая принимает номер карты или номер счета и шифрует их"""
+    if len(call_number.split()[-1]) <= 16:
         return get_mask_card_number(card_)
     else:
         return get_mask_account(bank_account)
@@ -15,6 +15,3 @@ def get_date() -> Union[str, int]:
     now_date = datetime.datetime.now()
     get_current_time = f'{now_date.strftime("%d.%m.%Y")}'
     return get_current_time
-
-
-print(mask_account_card(call_number))
