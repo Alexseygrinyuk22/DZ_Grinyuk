@@ -10,6 +10,7 @@ def mask_account_card(call_number: Union[str, int]) -> Union[str, int]:
     else:
         return get_mask_account(bank_account)
 
+
 def get_date() -> Union[str, int]:
     """Функция выводит время"""
     now_date = datetime.datetime.now()
