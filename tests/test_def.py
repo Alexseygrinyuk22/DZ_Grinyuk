@@ -50,3 +50,12 @@ def test_filter_by_state(list_of_dictionaries, new_list):
 
 def test_sort_by_date(list_dictionaris, result_list_dictionaris):
     assert test_sort_by_date(list_dictionaris) == result_list_dictionaris
+
+
+@pytest.fixture
+def my_fixture():
+    return None
+def test_fixture(my_fixture):
+    assert none_fixture(my_fixture) == None
+def test_fixture_emty():
+    assert none_fixture([]) == []
