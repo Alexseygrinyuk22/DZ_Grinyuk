@@ -14,5 +14,6 @@ def filter_by_state(
 
 
 def sort_by_date(list_dictionaris: Iterable[list], decreasing=False) -> Iterable[list]:
+    """Функция для сортировки списка по дате"""
     sorted_date = sorted(list_dictionaris, key=lambda x: x["date"], reverse=decreasing)
     return sorted_date
