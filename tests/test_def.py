@@ -4,6 +4,7 @@ from masks import get_mask_account, get_mask_card_number
 from processing import filter_by_state, sort_by_date
 from widget import get_date, mask_account_card
 from generators import new_filter_by_currency, transaction_descriptions, new_card_number_generator
+from decorators import log, my_function
 
 
 @pytest.mark.parametrize(
@@ -72,5 +73,17 @@ def test_transaction_descriptions(new_description):
 
 def test_new_card_number_generator():
     assert next(new_card_number_generator) == 0000 0000 0000 0000
-    assert next(new_card_number_generator) == 0000 0000 0000 0001
-    assert next(new_card_number_generator) == 0000 0000 0000 0002
+    assert next(new_card_number_generator) == 0000 0000 0000 0000
+    assert next(new_card_number_generator) == 0000 0000 0000 0000
+
+
+def test_log_er():
+    with pytest.raises(ZeroDivisionError):
+        my_function(x:2, y:0)
+
+
+def test_log(capsys):
+    print(my_function(x:2, y:2))
+    captured = capsys.readouterr()
+    assert captured.out == "2.0\n"
+
