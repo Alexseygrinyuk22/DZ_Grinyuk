@@ -1,0 +1,9 @@
+my_function start - 1724415403.6104739 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724415591.0173655 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724415698.6457198 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724415791.7671223 
+my_functions ok 
+my_functions stop - <built-in function time>
