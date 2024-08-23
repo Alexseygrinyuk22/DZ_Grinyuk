@@ -15,7 +15,7 @@ def log(filename):
                         file.write(f"my_function start - {time_1} \nmy_functions ok \nmy_functions stop - {time_2}")
                 else:
                     print(f"my_function start - {time_1} \nmy_functions ok \nmy_functions stop - {time_2}")
-            except Exceptoin as e:
+            except Exception as e:
                 if filename:
                     with open(filename, "a", encoding="utf-8") as file:
                         file.write(f"my_function error: {e}.Inputs: {args}, {kwargs}")
@@ -24,7 +24,7 @@ def log(filename):
                 raise
             return result
         return wrapper
-    return time
+    return timer(func)
 
 
 @log(filename="mylog.txt")
