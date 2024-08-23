@@ -1,9 +1,9 @@
 import pytest
 
-from masks import get_mask_account, get_mask_card_number
-from processing import filter_by_state, sort_by_date
-from widget import get_date, mask_account_card
-from generators import new_filter_by_currency, transaction_descriptions, new_card_number_generator
+from src.masks import get_mask_account, get_mask_card_number
+from src.processing import filter_by_state, sort_by_date
+from src.widget import get_date, mask_account_card
+from src.generators import new_filter_by_currency, transaction_descriptions, new_card_number_generator
 
 
 @pytest.mark.parametrize(
