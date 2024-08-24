@@ -4,7 +4,7 @@ from src.decorators import log, func
 def test_log_exseption(capsys):
         with open(func, 'r', encoding='utf-8') as file:
             logs = file.read()
-        assert "my function error: unsupported operand type(s) for +: 'int' and 'str'. inputs: (1, '2'), {}" in logs
+        assert logs.out == "TypeError: expected str, bytes or os.PathLike object, not function\n"
 
 def test_log_exposition(capsys):
     @log(filename="")
@@ -12,4 +12,4 @@ def test_log_exposition(capsys):
         return x+y
     func(1, "2")
     captured = capsys.readouterr()
-    assert "TypeError: unsupported operand type(s) for +: 'int' and 'str'" in captured.out
+    assert captured.out == "TypeError: unsupported operand type(s) for +: 'int' and 'str'\n"
