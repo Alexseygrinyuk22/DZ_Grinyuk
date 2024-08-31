@@ -1,0 +1,13 @@
+my_function error: 'int' object is not callable.Inputs: (<function my_function at 0x000001D84AC55940>,), {}my_function error: 'str' object is not callable.Inputs: (<function my_function at 0x000001FC75225940>,), {}my_function error: 'int' object is not callable.Inputs: (<function my_function at 0x00000239E9BC5940>,), {}my_function error: 'str' object is not callable.Inputs: (<function my_function at 0x0000019B938B5940>,), {}my_function start - 1724414718.6932247 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724414757.6037245 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724414795.094592 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724414805.2130954 
+my_functions ok 
+my_functions stop - <built-in function time>my_function start - 1724508128.9324205 
+my_functions ok 
+my_functions stop - 1724508128.9324205my_function start - 1724667247.5473292 
+my_functions ok 
+my_functions stop - 1724667247.5473292
