@@ -6,4 +6,8 @@ my_functions stop - <built-in function time>my_function start - 1724414795.09459
 my_functions ok 
 my_functions stop - <built-in function time>my_function start - 1724414805.2130954 
 my_functions ok 
-my_functions stop - <built-in function time>
+my_functions stop - <built-in function time>my_function start - 1724508128.9324205 
+my_functions ok 
+my_functions stop - 1724508128.9324205my_function start - 1724667247.5473292 
+my_functions ok 
+my_functions stop - 1724667247.5473292
