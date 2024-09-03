@@ -15,4 +15,4 @@ def financial_transactions(description=None):
                 yield new_list_json
 
 
-print(financial_transactions())
+print(next(financial_transactions()))
