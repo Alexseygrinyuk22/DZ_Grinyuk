@@ -1,10 +1,14 @@
-import pytest
+import os
+from dotenv import load_dotenv
 import requests
+import json
 from unittest.mock import Mock
 from unittest.mock import patch
 from src.external_api import sum_operation_Amount
 
-headers = {"apikey": "4GDC61W8SwfBY5qlVUmFKUe1IXwCBiW1"}
+load_dotenv()
+api_apilayer_token = os.getenv('key_api')
+headers = {"apikey": f'token {api_apilayer_token}'}
 
 
 def test_sum_operation_Amount():
