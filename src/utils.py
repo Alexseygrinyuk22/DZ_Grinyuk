@@ -12,7 +12,8 @@ def financial_transactions(description=None):
         else:
             for new_file_json in file_json:
                 new_list_json.append(new_file_json["description"])
-                yield new_list_json
+        yield new_list_json
 
 
+print(next(financial_transactions()))
 print(next(financial_transactions()))

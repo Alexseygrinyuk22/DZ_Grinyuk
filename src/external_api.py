@@ -1,7 +1,10 @@
-import json
 import os
 from dotenv import load_dotenv
-headers = {"apikey": "4GDC61W8SwfBY5qlVUmFKUe1IXwCBiW1"}
+import requests
+import json
+load_dotenv()
+api_apilayer_token = os.getenv('key_api')
+headers = {"apikey": f'token {api_apilayer_token}'}
 
 
 def sum_operation_Amount():
@@ -12,8 +15,8 @@ def sum_operation_Amount():
     with open(r"../data/operations.json", "r", encoding="utf-8") as file:
         file_json = json.load(file)
         for new_file_json in file_json:
-            usd_eur = new_file_json["operationAmount"]["currency"]["code"]
-            if usd_eur == "USD":
+            usd_eur = new_file_json["operationAmount"]["currency"]
+            if usd_eur.get('code') == "USD":
                 amount_usd.append(new_file_json)
 
         total_usd = 0  # Сумма транзакций в долларах
@@ -27,8 +30,8 @@ def sum_operation_Amount():
         count_usd = result_dict_usd["result"]  # Получение значения конвертации доллара
 
         for new_file_json in file_json:
-            eur_usd = new_file_json["operationAmount"]["currency"]["code"]
-            if eur_usd == "EUR":
+            eur_usd = new_file_json["operationAmount"]["currency"]
+            if eur_usd.get('code') == "EUR":
                 amount_eur.append(new_file_json)
 
         total_eur = 0  # Сумма транзакций в евро
@@ -42,8 +45,8 @@ def sum_operation_Amount():
         count_eur = result_dict_eur["result"]  # Получение значения конвертации евро
 
         for new_file_json in file_json:
-            rub = new_file_json["operationAmount"]["currency"]["code"]
-            if rub == "RUB":
+            rub = new_file_json["operationAmount"]["currency"]
+            if rub.get('code') == "RUB":
                 amount_rub.append(new_file_json)
 
         total_rub = 0  # Сумма транзакций в рублях
