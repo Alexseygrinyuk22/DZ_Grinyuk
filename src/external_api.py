@@ -1,10 +1,12 @@
-import os
-from dotenv import load_dotenv
-import requests
 import json
+import os
+
+import requests
+from dotenv import load_dotenv
+
 load_dotenv()
-api_apilayer_token = os.getenv('key_api')
-headers = {"apikey": f'token {api_apilayer_token}'}
+api_apilayer_token = os.getenv("key_api")
+headers = {"apikey": f"token {api_apilayer_token}"}
 
 
 def sum_operation_Amount():
@@ -17,7 +19,7 @@ def sum_operation_Amount():
         file_json = json.loads(operations_json)
         for new_file_json in file_json:
             usd_eur = new_file_json["operationAmount"]["currency"]
-            if usd_eur.get('code') == "USD":
+            if usd_eur.get("code") == "USD":
                 amount_usd.append(new_file_json)
 
         total_usd = 0  # Сумма транзакций в долларах
@@ -32,7 +34,7 @@ def sum_operation_Amount():
 
         for new_file_json in file_json:
             eur_usd = new_file_json["operationAmount"]["currency"]
-            if eur_usd.get('code') == "EUR":
+            if eur_usd.get("code") == "EUR":
                 amount_eur.append(new_file_json)
 
         total_eur = 0  # Сумма транзакций в евро
@@ -47,7 +49,7 @@ def sum_operation_Amount():
 
         for new_file_json in file_json:
             rub = new_file_json["operationAmount"]["currency"]
-            if rub.get('code') == "RUB":
+            if rub.get("code") == "RUB":
                 amount_rub.append(new_file_json)
 
         total_rub = 0  # Сумма транзакций в рублях
