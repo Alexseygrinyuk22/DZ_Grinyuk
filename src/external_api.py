@@ -13,7 +13,8 @@ def sum_operation_Amount():
     amount_eur = []  # список в евро
     amount_rub = []  # список в рублях
     with open(r"../data/operations.json", "r", encoding="utf-8") as file:
-        file_json = json.load(file)
+        operations_json = file.read()
+        file_json = json.loads(operations_json)
         for new_file_json in file_json:
             usd_eur = new_file_json["operationAmount"]["currency"]
             if usd_eur.get('code') == "USD":
