@@ -12,7 +12,7 @@ logger.setLevel(logging.DEBUG)
 def get_mask_card_number(card_: Iterable[list]) -> Iterable[list]:
     """Функция которая шифрует номер банкосвкой карты"""
     name_card = [item.strip() for item in card_.split(" ")]
-    logger.info(f" Проверка ввода карты {name_card}")
+    logger.info(f" Проверка ввода карты {name_card}") # Запрос данных карты
     if name_card == " ":
         logger.info(f"Ввели не правельное значение карты{name_card}")
         return [{}]
@@ -26,14 +26,14 @@ def get_mask_card_number(card_: Iterable[list]) -> Iterable[list]:
     from_card = "".join(
         [private_number[i : i + chunk_size] for i in range(0, chunks, chunk_size)]
     )
-    logger.info(f"Ввод карты{name_card} и ее шифр {from_card}")
+    logger.info(f"Ввод карты{name_card} и ее шифр {from_card}") #Информация карты после шифра
     return f"{name_card} {from_card}"
 
 
 def get_mask_account(bank_account: Iterable[list]) -> Iterable[list]:
     """Функция которая шифрует номер банковского счета"""
     number_account = [number.strip() for number in bank_account.split(" ")]
-    logger.info(f" Проверка ввода счета {number_account}")
+    logger.info(f" Проверка ввода счета {number_account}") #Запрос данных по счету
     if number_account == " ":
         logger.info(f"Ввели не правельное значение счета{number_account}")
         return [{}]
@@ -47,7 +47,7 @@ def get_mask_account(bank_account: Iterable[list]) -> Iterable[list]:
     from_account = "".join(
         [private_last_account[i : i + chunk_size] for i in range(0, chunks, chunk_size)]
     )
-    logger.info(f"Ввод счета{number_account} и ее шифр {from_account}")
+    logger.info(f"Ввод счета{number_account} и ее шифр {from_account}") #Информация счета после шифра
     return f"{number_account} {from_account}"
 
 
