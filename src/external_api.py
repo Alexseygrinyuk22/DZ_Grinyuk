@@ -24,7 +24,7 @@ def sum_operation_amount_eur():
                 result_usd = response.text
                 result_dict_usd = json.loads(result_usd)
                 count_usd = result_dict_usd["result"]  # Получение значения конвертации доллара
-        return count_usd
+        return total_usd
 
 def sum_operations_amount_eur():
     """Функция принимает на вход транзакцию и возращет значение в рублях если сумма была в Евро"""
@@ -41,7 +41,7 @@ def sum_operations_amount_eur():
                 result_eur = response.text
                 result_dict_eur = json.loads(result_eur)
                 count_eur = result_dict_eur["result"]  # Получение значения конвертации евро
-        return count_eur
+        return total_eur
 
 
 def sum_operations_amount_rub():
