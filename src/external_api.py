@@ -23,8 +23,11 @@ def sum_operation_amount_eur():
                 response = requests.request("GET", convent_usd, headers=headers)
                 result_usd = response.text
                 result_dict_usd = json.loads(result_usd)
-                count_usd = result_dict_usd["result"]  # Получение значения конвертации доллара
+                count_usd = result_dict_usd[
+                    "result"
+                ]  # Получение значения конвертации доллара
         return total_usd
+
 
 def sum_operations_amount_eur():
     """Функция принимает на вход транзакцию и возращет значение в рублях если сумма была в Евро"""
@@ -40,7 +43,9 @@ def sum_operations_amount_eur():
                 response = requests.request("GET", convent_eur, headers=headers)
                 result_eur = response.text
                 result_dict_eur = json.loads(result_eur)
-                count_eur = result_dict_eur["result"]  # Получение значения конвертации евро
+                count_eur = result_dict_eur[
+                    "result"
+                ]  # Получение значения конвертации евро
         return total_eur
 
 
@@ -52,7 +57,6 @@ def sum_operations_amount_rub():
         for new_file_json in file_json:
             if new_file_json["operationAmount"]["currency"].get("code") == "RUB":
                 return new_file_json["operationAmount"]["amount"]
-
 
 
 print(sum_operations_amount_rub())
