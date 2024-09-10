@@ -15,7 +15,7 @@ def sum_operation_amount_eur():
         operations_json = file.read()
         file_json = json.loads(operations_json)
         for new_file_json in file_json:
-            if new_file_json["operationAmount"]["currency"].get("code") == "USD":
+            if new_file_json["operationAmount"]["currency"].get("name") == "USD":
                 total_usd = 0  # Сумма транзакций в долларах
                 usd = new_file_json["operationAmount"].get("amount", 0)
                 total_usd += float(usd)
@@ -35,7 +35,7 @@ def sum_operations_amount_eur():
         operations_json = file.read()
         file_json = json.loads(operations_json)
         for new_file_json in file_json:
-            if new_file_json["operationAmount"]["currency"].get("code") == "EUR":
+            if new_file_json["operationAmount"]["currency"].get("name") == "EUR":
                 total_eur = 0  # Сумма транзакций в евро
                 eur = new_file_json["operationAmount"].get("amount", 0)
                 total_eur += float(eur)
@@ -55,8 +55,8 @@ def sum_operations_amount_rub():
         operations_json = file.read()
         file_json = json.loads(operations_json)
         for new_file_json in file_json:
-            if new_file_json["operationAmount"]["currency"].get("code") == "RUB":
+            if new_file_json["operationAmount"]["currency"].get("name") == "руб.":
                 return new_file_json["operationAmount"]["amount"]
 
 
-print(sum_operations_amount_rub())
+print(sum_operation_amount_eur())

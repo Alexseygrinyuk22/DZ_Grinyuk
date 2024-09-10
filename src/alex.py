@@ -22,7 +22,7 @@ def sum_operation_Amount():
         operations_json = file.read()
         file_json = json.loads(operations_json)
     for new_file_json in file_json:
-        if new_file_json["operationAmount"]["currency"].get("code") != "RUB":
+        if new_file_json["operationAmount"]["currency"].get("name") == "EUR":
             amount_eur = new_file_json["operationAmount"]["amount"]
     return float(amount_eur * one_eur)
 

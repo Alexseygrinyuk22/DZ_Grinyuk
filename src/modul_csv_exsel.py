@@ -4,7 +4,7 @@ import pandas as pd
 
 
 with open(r"../data/transactions.csv", encoding="utf-8") as file:
-    file_csv = csv.reader(file, delimiter=";")
+    file_csv = csv.DictReader(file, delimiter=";")
     for new_file_csv in file_csv:
         list_file_csv = new_file_csv
 
