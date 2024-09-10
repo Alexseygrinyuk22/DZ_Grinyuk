@@ -1,6 +1,7 @@
-from src.masks import get_mask_card_number, get_mask_account, card_, bank_account
-from typing import Union
 import datetime
+from typing import Union
+
+from src.masks import bank_account, card_, get_mask_account, get_mask_card_number
 
 
 def mask_account_card(call_number: Union[str, int]) -> Union[str, int]:
